@@ -1,0 +1,34 @@
+//My Code - translate words from ".--" to letters
+
+
+package morsecode
+
+fun decodeMorse(code: String): String {
+    var result = ""
+    val words = code.split("   ")             // split for words
+    
+    
+    for (word in words){
+        if (word == "") { continue }          //if there is any spaces at start/end
+        var letters = word.split(" ")         // split for letters
+        for(letter in letters){               //translate letters
+            if (letter == "") { continue }    //if there is any spaces at start/end
+            result += MorseCode[letter] 
+        }
+        result += " "                       //add space after word
+    }
+    
+    return result.take(result.length -1)    // result without last space
+}
+
+Experienced person's Code:
+
+package morsecode
+
+fun decodeMorse(code: String): String {
+  return code.split(" ")
+             .map({ x -> MorseCode[x] ?: " " })
+             .joinToString("")
+             .replace("  "," ")
+             .trim()
+}

@@ -1,6 +1,4 @@
-//My Code - translate words from ".--" to letters
-
-
+$$$$$$$  My Code - translate words from ".--" to letters
 package morsecode
 
 fun decodeMorse(code: String): String {
@@ -21,7 +19,7 @@ fun decodeMorse(code: String): String {
     return result.take(result.length -1)    // result without last space
 }
 
-Experienced person's Code:
+##########Experienced person's Code:
 
 package morsecode
 

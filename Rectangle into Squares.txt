@@ -1,0 +1,24 @@
+package squares
+
+fun sqInRect(lng:Int, wdth:Int):List<Int>? {
+    val result: MutableList<Int> = mutableListOf()
+    var a = lng
+    var b = wdth
+    
+    if (a==b){         //return null if it's square allready
+        return null
+    }
+    
+    while (a != b){   // add shorter edge to the list and shorten the longer one
+        if (a<b){
+            result.add(a)
+            b -= a
+        } else{
+            result.add(b)
+            a -= b
+        }
+    }
+    result.add(a)  // add the last square
+    return result
+    
+}

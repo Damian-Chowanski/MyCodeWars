@@ -1,0 +1,22 @@
+package spinwords
+
+fun spinWords(sentence: String): String {
+    var words = sentence.split(" ")
+    var spinedSentence = ""
+    for (word in words) {
+        if (word.length > 4){
+            spinedSentence += word.reversed()               //reversing the word
+        }else {
+            spinedSentence += word
+        }
+        spinedSentence += " "                               //add space after every word
+    }
+    return spinedSentence.take(spinedSentence.length -1)   //result -last " "
+}
+
+##############################################################################
+
+Advanced User:
+package spinwords
+
+fun spinWords(sentence: String) = sentence.split(" ").joinToString(" ") { if (it.length > 4) it.reversed() else it }
